@@ -33,6 +33,9 @@ export default {
 
   methods: {
     changeListIndex (e) {
+      if (e.target !== this.$refs.content) {
+        return true
+      }
       // Up, Down, Enter, Space
       if ([40, 38, 13].includes(e.keyCode) ||
         e.keyCode === 32 && !this.isActive
